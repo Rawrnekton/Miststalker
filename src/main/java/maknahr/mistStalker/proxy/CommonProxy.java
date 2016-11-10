@@ -12,27 +12,23 @@ public abstract class CommonProxy {
   /**
    * Run before anything else. Read your config, create blocks, items, etc, and register them with the GameRegistry
    */
-  public void preInit()
-  {
-	   //read config first
+  public void preInit() {
+	  //read config first
 	  maknahr.mistStalker.items.StartupItemsCommon.preInitCommon();
-	  System.out.println("TEST 1");
   }
 
   /**
    * Do your mod setup. Build whatever data structures you care about. Register recipes,
    * send FMLInterModComms messages to other mods.
    */
-  public void init()
-  {
+  public void init() {
 
   }
 
   /**
    * Handle interaction with other mods, complete your setup based on this.
    */
-  public void postInit()
-  {
+  public void postInit() {
 
   }
 

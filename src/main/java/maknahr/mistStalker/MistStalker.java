@@ -10,14 +10,13 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = MistStalker.MODID, name = MistStalker.NAME, version = MistStalker.VERSION, acceptedMinecraftVersions = "[1.10.2]")
-public class MistStalker
-{
+public class MistStalker {
     public static final String MODID = "MistStalker";
     public static final String VERSION = "0.1";
 	public static final String NAME = "Miststalker";
     
-	//just put that here just in case i need it later and forget where to put it
-    static{
+	//just put that here just in case i need it later and forgot where to put it
+    static {
         //For some reason, this has to be done here
         FluidRegistry.enableUniversalBucket();
     }
@@ -30,20 +29,17 @@ public class MistStalker
     public static CommonProxy proxy;
 
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event) {
     	proxy.preInit();
     }
 
     @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
-      proxy.init();
+    public void init(FMLInitializationEvent event) {
+    	proxy.init();
     }
 
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
-      proxy.postInit();
+    public void postInit(FMLPostInitializationEvent event) {
+    	proxy.postInit();
     }
 }
