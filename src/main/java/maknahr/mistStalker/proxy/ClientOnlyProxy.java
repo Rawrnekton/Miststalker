@@ -13,8 +13,10 @@ public class ClientOnlyProxy extends CommonProxy {
    */
   public void preInit()
   {
+	  System.out.println("Im fine and you");
     super.preInit();
-    maknahr.mistStalker.items.StartupItemsClient.initClientOnly();
+    maknahr.mistStalker.items.StartupItemsClient.preInitClientOnly();
+    System.out.println("TEST 2");
   }
 
   /**
