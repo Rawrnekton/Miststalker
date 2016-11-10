@@ -14,6 +14,7 @@ public class ClientOnlyProxy extends CommonProxy {
   public void preInit()
   {
     super.preInit();
+    maknahr.mistStalker.items.StartupItemsClient.initClientOnly();
   }
 
   /**

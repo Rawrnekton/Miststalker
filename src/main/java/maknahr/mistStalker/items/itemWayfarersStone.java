@@ -16,7 +16,7 @@ public class itemWayfarersStone extends Item{
 
 	  public itemWayfarersStone() {
 		
-	    final int MAXIMUM_NUMBER_OF_FROGS = 6;
+	    final int MAXIMUM_NUMBER_OF_FROGS = 8;
 	    this.setMaxStackSize(MAXIMUM_NUMBER_OF_FROGS);
 	    this.setCreativeTab(CreativeTabs.MISC);   // the item will appear on the Miscellaneous tab in creative
 	  }

@@ -15,6 +15,7 @@ public abstract class CommonProxy {
   public void preInit()
   {
 	   //read config first
+	  maknahr.mistStalker.items.StartupItemsCommon.initCommon();
   }
 
   /**
