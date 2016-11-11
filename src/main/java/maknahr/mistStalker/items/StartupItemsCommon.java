@@ -33,7 +33,7 @@ public class StartupItemsCommon {
     //  |  extinguished_candle  +       candle          |
     //  +-----------------------+-----------------------+
     //
-    itemWayfarersStone = (itemWayfarersStone)(new itemWayfarersStone().setUnlocalizedName("Wayfarer's Stone"));
+    itemWayfarersStone = (itemWayfarersStone)(new itemWayfarersStone().setUnlocalizedName("wayfarers_stone"));
     itemWayfarersStone.setRegistryName("itemWayfarersStone");
     GameRegistry.register(itemWayfarersStone);
   }
