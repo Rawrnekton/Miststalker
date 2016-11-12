@@ -22,14 +22,12 @@ public abstract class CommonProxy {
    * send FMLInterModComms messages to other mods.
    */
   public void init() {
-
   }
 
   /**
    * Handle interaction with other mods, complete your setup based on this.
    */
   public void postInit() {
-
   }
 
   // helper to determine whether the given player is in creative mode

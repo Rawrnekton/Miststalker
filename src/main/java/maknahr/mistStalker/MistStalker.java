@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = MistStalker.MODID, name = MistStalker.NAME, version = MistStalker.VERSION, acceptedMinecraftVersions = "[1.10.2]")
 public class MistStalker {
-    public static final String MODID = "MistStalker";
+    public static final String MODID = "miststalker";
     public static final String VERSION = "0.1";
 	public static final String NAME = "Miststalker";
     

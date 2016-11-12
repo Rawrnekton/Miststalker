@@ -19,8 +19,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class StartupItemsCommon {
   public static itemWayfarersStone itemWayfarersStone;  // this holds the unique instance of your block
 
-  public static void preInitCommon()
-  {
+  public static void preInitCommon() {
     // each instance of your item should have two names:
     // 1) a registry name that is used to uniquely identify this item.  Should be unique within your mod.  use lower case.
     // 2) an 'unlocalised name' that is used to retrieve the text name of your item in the player's language.  For example-
@@ -38,11 +37,9 @@ public class StartupItemsCommon {
     GameRegistry.register(itemWayfarersStone);
   }
 
-  public static void initCommon()
-  {
+  public static void initCommon() {
   }
 
-  public static void postInitCommon()
-  {
+  public static void postInitCommon() {
   }
 }
