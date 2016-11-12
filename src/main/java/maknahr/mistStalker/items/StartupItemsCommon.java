@@ -17,8 +17,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 
 public class StartupItemsCommon {
-  public static itemWayfarersStone itemWayfarersStone;  // this holds the unique instance of your block
+  public static itemWayfarersStone itemWayfarersStone;  // this holds the unique instance of your item
 
+  
+  
   public static void preInitCommon() {
     // each instance of your item should have two names:
     // 1) a registry name that is used to uniquely identify this item.  Should be unique within your mod.  use lower case.
