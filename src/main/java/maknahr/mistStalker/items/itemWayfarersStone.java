@@ -59,6 +59,7 @@ public class itemWayfarersStone extends Item{
 	      }
 	      return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemStackIn);
 	    } */
+		  /*
 		  if (playerIn.isSneaking()) {
 			  if (worldIn.isRemote) {
 				  playerIn.addChatComponentMessage(new TextComponentString("u is sneaky"));
@@ -69,6 +70,9 @@ public class itemWayfarersStone extends Item{
 			  playerIn.addChatComponentMessage(new TextComponentString("u is not sneaky"));
 			  return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
 		  }		  
+		  */
+		  playerIn.addExhaustion(-1);
+		  
 		  
 		  return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
 	  }
