@@ -1,6 +1,7 @@
 package maknahr.mistStalker.items;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -59,22 +60,29 @@ public class itemWayfarersStone extends Item{
 	      }
 	      return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemStackIn);
 	    } */
-		  /*
+		  
 		  if (playerIn.isSneaking()) {
 			  if (worldIn.isRemote) {
-				  playerIn.addChatComponentMessage(new TextComponentString("u is sneaky"));
+				  playerIn.addChatComponentMessage(new TextComponentString("saturation " + playerIn.getFoodStats().getSaturationLevel()));
+				  
 			  }
 		  }
-		  else if (worldIn.isRemote) {
-			  playerIn.addVelocity(0, 5, 0);
-			  playerIn.addChatComponentMessage(new TextComponentString("u is not sneaky"));
+		  else /*if (worldIn.isRemote)*/ {
+			  //playerIn.addExhaustion(1);
+			  //playerIn.addChatComponentMessage(new TextComponentString("added Exhaustion" + playerIn.getFoodStats()));
+			  playerIn.getFoodStats().addStats(1, 1);
 			  return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
-		  }		  
-		  */
-		  playerIn.addExhaustion(-1);
-		  
+		  }
 		  
 		  return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
+	  }
+	  
+	  @Override
+	  public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+		  /*if(itemslot = -106)*/
+		  if (worldIn.isRemote && (itemSlot == 0)) {
+			  entityIn.addChatMessage(new TextComponentString("ok"));
+		  }
 	  }
 	  
 }
