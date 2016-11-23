@@ -22,12 +22,15 @@ import net.minecraft.world.World;
 
 public class itemWayfarersStone extends Item{
 
+	  double lastX = 0;
+	  double lastZ = 0;
+	  
 	  public itemWayfarersStone() {
 		
 		  this.setMaxDamage(0);
 		  this.setHasSubtypes(false);
 		  this.setMaxStackSize(1);
-		  this.setCreativeTab(CreativeTabs.MISC);   // the item will appear on the Miscellaneous tab in creative
+		  this.setCreativeTab(CreativeTabs.MISC); // the item will appear on the Miscellaneous tab in creative
 	  }
 	  
 	  @Override
@@ -79,10 +82,23 @@ public class itemWayfarersStone extends Item{
 	  
 	  @Override
 	  public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-		  /*if(itemslot = -106)*/
-		  if (worldIn.isRemote && (itemSlot == 0)) {
-			  entityIn.addChatMessage(new TextComponentString("ok"));
+		  
+		  if (worldIn.isRemote) {
+			  //entityIn.addChatMessage(new TextComponentString("I was here: " + entityIn.lastTickPosX + " " + entityIn.lastTickPosZ));
+			  
+			  
+			  if((lastX != entityIn.posX) || (lastZ != entityIn.posZ)) {
+				  entityIn.addChatMessage(new TextComponentString("I moved LOL" + lastX + " " + lastZ));
+				  lastX = entityIn.posX;
+				  lastZ = entityIn.posZ;
+			  
+			  } else {
+				  lastX = entityIn.posX;
+				  lastZ = entityIn.posZ;
+			  }
 		  }
+		  
+		  
 	  }
 	  
 }
