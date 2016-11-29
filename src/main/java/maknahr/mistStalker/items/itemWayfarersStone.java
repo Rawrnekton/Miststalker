@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
@@ -22,83 +23,44 @@ import net.minecraft.world.World;
 
 public class itemWayfarersStone extends Item{
 
-	  double lastX = 0;
-	  double lastZ = 0;
+	  private int saturationBuildUp = 0;
 	  
 	  public itemWayfarersStone() {
 		
 		  this.setMaxDamage(0);
 		  this.setHasSubtypes(false);
 		  this.setMaxStackSize(1);
-		  this.setCreativeTab(CreativeTabs.MISC); // the item will appear on the Miscellaneous tab in creative
+		  this.setCreativeTab(CreativeTabs.MISC);
 	  }
 	  
 	  @Override
 	  public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
-		/*
-	    NBTTagCompound nbtTagCompound = itemStackIn.getTagCompound();
-
-	    if (playerIn.isSneaking()) { // shift pressed; save (or overwrite) current location
-	      if (nbtTagCompound == null) {
-	        nbtTagCompound = new NBTTagCompound();
-	        itemStackIn.setTagCompound(nbtTagCompound);
-	      }
-	      nbtTagCompound.setBoolean("Bound", true);
-	      nbtTagCompound.setDouble("X", (int) playerIn.posX);
-	      nbtTagCompound.setDouble("Y", (int)playerIn.posY);
-	      nbtTagCompound.setDouble("Z", (int)playerIn.posZ);
-	      return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
-	    }
-
-	    boolean bound = false;
-	    if (nbtTagCompound != null && nbtTagCompound.hasKey("Bound")  ) {
-	      bound = nbtTagCompound.getBoolean("Bound");
-	    }
-	    if (bound) {
-	      playerIn.setActiveHand(hand); // start the charge up sequence
-	      return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
-	    } else {
-	      if (worldIn.isRemote) {  // only on the client side, else you will get two messages..
-	        playerIn.addChatComponentMessage(new TextComponentString("Gem doesn't have a stored location! Shift right click to store your current location"));
-	      }
-	      return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemStackIn);
-	    } */
+		  playerIn.getFoodStats().setFoodLevel(0);
+		  playerIn.getFoodStats().setFoodSaturationLevel(0);
 		  
-		  if (playerIn.isSneaking()) {
-			  if (worldIn.isRemote) {
-				  playerIn.addChatComponentMessage(new TextComponentString("saturation " + playerIn.getFoodStats().getSaturationLevel()));
-				  
-			  }
-		  }
-		  else /*if (worldIn.isRemote)*/ {
-			  //playerIn.addExhaustion(1);
-			  //playerIn.addChatComponentMessage(new TextComponentString("added Exhaustion" + playerIn.getFoodStats()));
-			  playerIn.getFoodStats().addStats(1, 1);
-			  return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
-		  }
+		  playerIn.addChatComponentMessage(new TextComponentString("does is do this stuff 2 times"));
 		  
 		  return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
 	  }
 	  
 	  @Override
 	  public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+		  if (!(entityIn instanceof EntityPlayer)) return;
+		  EntityPlayer playerIn = (EntityPlayer) entityIn;
 		  
-		  if (worldIn.isRemote) {
-			  //entityIn.addChatMessage(new TextComponentString("I was here: " + entityIn.lastTickPosX + " " + entityIn.lastTickPosZ));
-			  
-			  
-			  if((lastX != entityIn.posX) || (lastZ != entityIn.posZ)) {
-				  entityIn.addChatMessage(new TextComponentString("I moved LOL" + lastX + " " + lastZ));
-				  lastX = entityIn.posX;
-				  lastZ = entityIn.posZ;
-			  
-			  } else {
-				  lastX = entityIn.posX;
-				  lastZ = entityIn.posZ;
+		  if ((playerIn.onGround) && (worldIn.canBlockSeeSky(new BlockPos(playerIn.posX, playerIn.posY, playerIn.posZ)))) {
+			  saturationBuildUp += 1;
+			  if(worldIn.isRemote) playerIn.addChatComponentMessage(new TextComponentString("saturationBuildUp: " + saturationBuildUp));
+			  if (saturationBuildUp >= 180) {
+				  if (worldIn.isRemote) {
+					  playerIn.addChatComponentMessage(new TextComponentString("Player is standing on " + playerIn.posY + "\nSaturation was " + playerIn.getFoodStats().getSaturationLevel()));
+				  }
+				  saturationBuildUp = 0;
+				  playerIn.getFoodStats().addStats(1, 1);
+				  if (worldIn.isRemote) {
+					  playerIn.addChatComponentMessage(new TextComponentString("Saturation is now " + playerIn.getFoodStats().getSaturationLevel()));
+				  }
 			  }
 		  }
-		  
-		  
 	  }
-	  
 }
