@@ -1,5 +1,6 @@
 package maknahr.mistStalker;
 
+import maknahr.mistStalker.common.lib.ModMisc;
 import maknahr.mistStalker.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -8,16 +9,12 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = MistStalker.MODID, name = MistStalker.NAME, version = MistStalker.VERSION, acceptedMinecraftVersions = "[1.10.2]")
+@Mod(modid = ModMisc.MODID, name = ModMisc.MODNAME, version = ModMisc.VERSION, acceptedMinecraftVersions = ModMisc.MCVERSION)
 public class MistStalker {
-    public static final String MODID = "miststalker";
-    public static final String VERSION = "0.1";
-	public static final String NAME = "Miststalker";
-	
-	@Mod.Instance(MODID)
+	@Mod.Instance(ModMisc.MODID)
 	public static MistStalker instance;
 
-    @SidedProxy(clientSide="maknahr.mistStalker.proxy.ClientOnlyProxy", serverSide="maknahr.mistStalker.proxy.DedicatedServerProxy")
+    @SidedProxy(clientSide=ModMisc.CLIENTPROXY, serverSide=ModMisc.SERVERPROXY)
     public static CommonProxy proxy;
 
     @EventHandler
