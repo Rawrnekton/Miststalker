@@ -1,5 +1,6 @@
 package maknahr.mistStalker.proxy;
 
+import maknahr.mistStalker.common.core.CommonProxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.player.EntityPlayer;
