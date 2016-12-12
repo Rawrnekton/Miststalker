@@ -1,7 +1,7 @@
-package maknahr.mistStalker;
+package maknahr.miststalker;
 
-import maknahr.mistStalker.common.core.CommonProxy;
-import maknahr.mistStalker.common.lib.ModMisc;
+import maknahr.miststalker.common.core.CommonProxy;
+import maknahr.miststalker.common.lib.ModMisc;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;

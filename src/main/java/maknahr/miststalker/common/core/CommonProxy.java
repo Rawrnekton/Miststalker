@@ -1,4 +1,4 @@
-package maknahr.mistStalker.common.core;
+package maknahr.miststalker.common.core;
 
 import net.minecraft.entity.player.EntityPlayer;
 
@@ -14,7 +14,7 @@ public abstract class CommonProxy {
    */
   public void preInit() {
 	  //read config first
-	  maknahr.mistStalker.items.StartupItemsCommon.preInitCommon();
+	  maknahr.miststalker.items.StartupItemsCommon.preInitCommon();
   }
 
   /**

@@ -1,4 +1,4 @@
-package maknahr.mistStalker.common.core;
+package maknahr.miststalker.common.core;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;

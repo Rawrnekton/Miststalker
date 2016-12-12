@@ -1,4 +1,4 @@
-package maknahr.mistStalker.events;
+package maknahr.miststalker.events;
 
 public class EventHandler {
 

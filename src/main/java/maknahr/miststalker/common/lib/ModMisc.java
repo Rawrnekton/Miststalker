@@ -1,4 +1,4 @@
-package maknahr.mistStalker.common.lib;
+package maknahr.miststalker.common.lib;
 
 public final class ModMisc {
 

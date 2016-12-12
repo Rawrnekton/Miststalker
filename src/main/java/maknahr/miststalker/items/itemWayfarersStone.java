@@ -1,4 +1,4 @@
-package maknahr.mistStalker.items;
+package maknahr.miststalker.items;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
