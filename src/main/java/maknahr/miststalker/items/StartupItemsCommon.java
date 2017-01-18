@@ -2,23 +2,9 @@ package maknahr.miststalker.items;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-/**
- * User: The Grey Ghost
- * Date: 24/12/2014
- *
- * The Startup classes for this example are called during startup, in the following order:
- *  preInitCommon
- *  preInitClientOnly
- *  initCommon
- *  initClientOnly
- *  postInitCommon
- *  postInitClientOnly
- *  See MinecraftByExample class for more information
- */
-
 public class StartupItemsCommon {
   public static itemWayfarersStone itemWayfarersStone;  // this holds the unique instance of your item
-
+  public static itemHeartFinder itemHeartFinder;
   
   
   public static void preInitCommon() {
@@ -37,6 +23,11 @@ public class StartupItemsCommon {
     itemWayfarersStone = (itemWayfarersStone)(new itemWayfarersStone().setUnlocalizedName("wayfarers_stone"));
     itemWayfarersStone.setRegistryName("itemWayfarersStone");
     GameRegistry.register(itemWayfarersStone);
+    /*
+    itemHeartFinder = (itemHeartFinder)(new itemHeartFinder().setUnlocalizedName("heart_finder"));
+    itemHeartFinder.setRegistryName("itemHeartFinder");
+    GameRegistry.register(itemHeartFinder);*/
+    
   }
 
   public static void initCommon() {
