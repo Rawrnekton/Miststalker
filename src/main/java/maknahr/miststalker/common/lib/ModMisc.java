@@ -14,7 +14,6 @@ public final class ModMisc {
 	public static final String COMMONPROXY = "maknahr.miststalker.common.core.Commonproxy";
 	public static final String CLIENTPROXY = "maknahr.miststalker.proxy.ClientOnlyProxy";
 	public static final String SERVERPROXY = "maknahr.miststalker.common.core.DedicatedServerProxy";
-
 	//Proxy Locations
 	/*
 	public final String CLIENTPROXY = "maknahr.miststalker.client.core.proxy.ClientProxy";
