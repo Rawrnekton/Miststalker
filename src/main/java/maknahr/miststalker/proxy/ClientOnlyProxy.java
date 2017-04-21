@@ -1,5 +1,6 @@
-package maknahr.mistStalker.proxy;
+package maknahr.miststalker.proxy;
 
+import maknahr.miststalker.common.core.CommonProxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,7 +14,7 @@ public class ClientOnlyProxy extends CommonProxy {
    */
   public void preInit() {
 	  super.preInit();
-	  maknahr.mistStalker.items.StartupItemsClient.preInitClientOnly();
+	  maknahr.miststalker.items.StartupItemsClient.preInitClientOnly();
   }
 
   /**

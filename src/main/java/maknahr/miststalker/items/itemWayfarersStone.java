@@ -1,4 +1,4 @@
-package maknahr.mistStalker.items;
+package maknahr.miststalker.items;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -13,12 +13,8 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
 /**
- * User: The Grey Ghost
- * Date: 30/12/2014
- *
- * ItemSimple is an ordinary two-dimensional item
- * For background information on items see here http://greyminecraftcoder.blogspot.com/2013/12/items.html
- *   and here http://greyminecraftcoder.blogspot.com.au/2014/12/item-rendering-18.html
+ * User: maknahr
+ * Date: 
  */
 
 public class itemWayfarersStone extends Item{
