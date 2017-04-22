@@ -15,27 +15,25 @@ public class MistStalker {
 	@Mod.Instance(ModMisc.MODID)
 	public static MistStalker instance;
 
-    @SidedProxy(clientSide=ModMisc.CLIENTPROXY, serverSide=ModMisc.SERVERPROXY)
-    public static CommonProxy proxy;
+	@SidedProxy(clientSide = ModMisc.CLIENTPROXY, serverSide = ModMisc.SERVERPROXY)
+	public static CommonProxy proxy;
 
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-    	
-    	ModEntitys.init();
-    	
-    	
-    	
-    	
-    	proxy.preInit();
-    }
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		ModEntitys.init();
 
-    @EventHandler
-    public void init(FMLInitializationEvent event) {
-    	proxy.init();
-    }
+		//lul 2
+		
+		proxy.preInit();
+	}
 
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-    	proxy.postInit();
-    }
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		proxy.init();
+	}
+
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		proxy.postInit();
+	}
 }
