@@ -21,8 +21,6 @@ public class MistStalker {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ModEntitys.init();
-
-		//lul 2
 		
 		proxy.preInit();
 	}
