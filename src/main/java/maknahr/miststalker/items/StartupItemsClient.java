@@ -11,9 +11,9 @@ public class StartupItemsClient {
 	  
     ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("miststalker:itemWayfarersStone", "inventory");
     ModelLoader.setCustomModelResourceLocation(StartupItemsCommon.itemWayfarersStone, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
-    /*
+    
     itemModelResourceLocation = new ModelResourceLocation("miststalker:itemHeartFinder", "inventory");
-    ModelLoader.setCustomModelResourceLocation(StartupItemsCommon.itemHeartFinder, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation); */
+    ModelLoader.setCustomModelResourceLocation(StartupItemsCommon.itemHeartFinder, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
   }
 
   public static void initClientOnly() {

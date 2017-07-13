@@ -1,4 +1,4 @@
-package maknahr.miststalker.common.core;
+package maknahr.miststalker.common.core.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
 

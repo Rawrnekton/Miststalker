@@ -1,6 +1,9 @@
 package maknahr.miststalker;
 
-import maknahr.miststalker.common.core.CommonProxy;
+/*
+ * Starklasse des Miststalker Projektes
+ */
+import maknahr.miststalker.common.core.proxy.CommonProxy;
 import maknahr.miststalker.common.lib.ModMisc;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
