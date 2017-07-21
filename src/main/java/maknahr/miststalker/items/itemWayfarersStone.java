@@ -12,11 +12,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-/**
- * User: maknahr
- * Date: 30/12/2016
- */
-
 public class itemWayfarersStone extends Item{
 
 	  private int saturationBuildUp = 0;

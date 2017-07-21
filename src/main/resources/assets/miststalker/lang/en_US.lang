@@ -1,2 +1,7 @@
 item.wayfarers_stone.name=Wayfarer's Stone
+<<<<<<< HEAD
 item.heart_finder.name=Heartfinder
+=======
+item.pingpong_racket.name=Ping Pong Racket
+item.pingpong_ball.name=Ping Pong Ball
+>>>>>>> branch 'master' of https://github.com/Rawrnekton/Miststalker
